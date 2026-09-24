@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kristin Brünnel - CV</title>
+    <!-- Edle Serifenschrift (Lora) für die gesamte Website -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+<script data-goatcounter="https://kristin-cv.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+    <style>
+        /* PROFESSIONELLES DESIGN: Weißer Hintergrund, schwarze Serifenschrift */
+        body {
+            background-color: #FFFFFF;
+            color: #111111;
+            font-family: 'Lora', serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden; 
+        }
+
+        /* APPLE-STYLE PARALLAX BACKGROUND TEXT */
+        .bg-text {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            color: #F2F2F2; 
+            z-index: -1; 
+            pointer-events: none;
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            white-space: nowrap;
+            letter-spacing: 3px;
+            transition: transform 0.1s ease-out; 
+        }
+
+        .bg-left {
+            left: 20px;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 10vh;
+        }
+
+        .bg-right {
+            right: 20px;
+            writing-mode: vertical-rl;
+            font-size: 4.5vh; 
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            background-color: rgba(255, 255, 255, 0.95); 
+            box-shadow: 0 0 40px rgba(0,0,0,0.03); 
+        }
+
+        /* Typewriter & Robot Header */
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        #robot-wrapper {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        #robot-icon {
+            height: 4rem; 
+            vertical-align: middle;
+            filter: grayscale(100%); 
+        }
+
+        .headline-sub {
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: #444;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .header-meta {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 50px;
+            border-top: 1px solid #111;
+            padding-top: 15px;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        .header-meta div {
+            text-align: left;
+            margin-left: 40px;
+        }
+
+        /* STICKY NAVIGATION */
+        .nav-grid {
+            position: sticky; 
+            top: 0; 
+            background-color: rgba(255, 255, 255, 0.98); 
+            z-index: 100; 
+            display: grid;
+            grid-template-columns: repeat(6, 1fr); /* Auf 6 Spalten erweitert für den Volunteer-Link */
+            border-top: 1px solid #111;
+            border-bottom: 1px solid #111;
+            padding: 15px 0;
+            margin-bottom: 60px;
+            font-size: 1.05rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-grid a {
+            color: #111111;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .nav-grid a:hover {
+            background-color: #111111;
+            color: #FFFFFF;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #111;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        section { margin-bottom: 80px; }
+
+        /* PROFILE CARD MIT SKILL-BALKEN */
+        .profile-card {
+            display: flex;
+            gap: 40px;
+            border: 1px solid #111;
+            padding: 30px;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        .profile-img {
+            max-width: 250px;
+            width: 100%;
+            height: auto;
+            filter: grayscale(100%) contrast(110%);
+            border: 1px solid #111;
+        }
+
+        .attributes-container {
+            flex-grow: 1;
+            font-size: 1.1rem;
+        }
+
+        .attr-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .attr-label {
+            width: 170px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .attr-bar {
+            flex-grow: 1;
+            height: 12px;
+            border: 1px solid #111;
+            padding: 2px;
+        }
+
+        .attr-fill {
+            height: 100%;
+            background-color: #111;
+        }
+
+        /* TIMELINE STYLING */
+        .timeline {
+            border-left: 2px solid #111;
+            padding-left: 30px;
+            margin-left: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 5px;
+            width: 11px;
+            height: 11px;
+            background: #FFF;
+            border: 2px solid #111;
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: inline-block;
+            background: #111;
+            color: #FFF;
+            padding: 3px 10px;
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 10px 0 5px 0;
+        }
+
+        .timeline-subtitle {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .timeline-bullets {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 1.05rem;
+        }
+
+        .timeline-bullets li {
+            margin-bottom: 8px;
+        }
+
+        /* Weitere Grids */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            font-size: 1.1rem;
+        }
+
+        .skill-category {
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #111;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .contact-info p {
+            font-size: 1.25rem;
+            margin: 10px 0;
+        }
+
+        .contact-info a {
+            color: #111111;
+            text-decoration: none;
+            border-bottom: 1px solid #111;
+        }
+
+        .contact-info a:hover {
+            background-color: #111111;
+            color: #FFFFFF;
+        }
+
+        @media (max-width: 1000px) {
+            .bg-text { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .profile-card { flex-direction: column; }
+            .nav-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .header-meta { flex-direction: column; }
+            .header-meta div { margin-left: 0; margin-bottom: 10px; }
+            h1 { font-size: 2.5rem; }
+            #robot-icon { height: 3rem; }
+            .container { padding: 30px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- RIESIGER HINTERGRUND-TEXT -->
+<div id="parallax-left" class="bg-text bg-left">
+    <span>Kristin Brünnel</span>
+</div>
+<div id="parallax-right" class="bg-text bg-right">
+    <span>M.Sc. Business Informatics</span>
+</div>
+
+<div class="container">
+    
+    <header>
+        <h1>
+            <span id="typewriter-text"></span>
+            <span id="robot-wrapper"><img src="running-robot 2.gif" id="robot-icon" alt="Robot"></span>
+        </h1>
+        <div class="headline-sub">
+            Executive Assistant @ Elevating Patterns &nbsp;|&nbsp; Master’s Student in Business Informatics<br>
+            Focus on IT Strategy & Cloud Architectures
+        </div>
+        <div class="header-meta">
+            <div>
+                / Based in Mannheim, Germany
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-grid">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#volunteer">Volunteer</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>Identity Card</h2>
+        
+        <div class="profile-card">
+            <img src="CV Bild Brünnel.jpg" alt="Kristin Brünnel" class="profile-img">
+            
+            <div class="attributes-container">
+                <div style="margin-bottom: 20px; font-weight: 600; letter-spacing: 1px;">[ Attributes ]</div>
+                
+                <div class="attr-row">
+                    <div class="attr-label">Translator IT/Biz</div>
+                    <div class="attr-bar"><div class="attr-fill" style="width: 95%;"></div></div>
+                </div>
+                <div class="attr-row">
+                    <div class="attr-label">Systems Thinking</div>
+                    <div class="attr-bar"><div class="attr-fill" style="width: 92%;"></div></div>
+                </div>
+                <div class="attr-row">
+                    <div class="attr-label">Agile Mindset</div>
+                    <div class="attr-bar"><div class="attr-fill" style="width: 90%;"></div></div>
+                </div>
+                <div class="attr-row">
+                    <div class="attr-label">Analytical</div>
+                    <div class="attr-bar"><div class="attr-fill" style="width: 85%;"></div></div>
+                </div>
+                <div class="attr-row">
+                    <div class="attr-label">Problem Solving</div>
+                    <div class="attr-bar"><div class="attr-fill" style="width: 88%;"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <p style="font-size: 1.15rem; max-width: 800px; border: 1px solid #111; padding: 20px;">
+            <strong>Bio:</strong> Driven by a genuine fascination for how modern technologies reshape systems, I made a deliberate pivot into the tech sector. I act as a translator who directly connects technical capabilities with strategic business objectives
+        </p>
+    </section>
+
+    <section id="experience">
+        <h2>Experience Log</h2>
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <div class="timeline-date">Sep 2026 - Present</div>
+                <h3 class="timeline-title">Elevating Patterns GmbH</h3>
+                <div class="timeline-subtitle">Executive Assistant / Mannheim, Germany</div>
+                <ul class="timeline-bullets">
+                    <li>Supporting the leadership team in scaling the AI-powered Digital Thread Platform for Industry 4.0</li>
+                    <li>Managing executive scheduling, day-to-day operations, and cross-functional communication within an open industrial ecosystem</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Mar 2026 - Aug 2026</div>
+                <h3 class="timeline-title">Mercedes-Benz AG</h3>
+                <div class="timeline-subtitle">Intern Digitalization MO/C / Sindelfingen, Germany</div>
+                <ul class="timeline-bullets">
+                    <li>Co-organized international "Digital Impact Checks" across major production sites to assess digital maturity and drive a standardized tool portfolio</li>
+                    <li>Managed the MO360 DigiPipeline to centralize and prioritize global analytics use cases</li>
+                    <li>Acted as Agile Developer and Scrum Master, driving a scalable low-code enterprise solution on Mendix</li>
+                    <li>Evaluated digital manufacturing tools directly on the shopfloor for technical scalability</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Oct 2025 - Feb 2026</div>
+                <h3 class="timeline-title">Agile Radicals GmbH</h3>
+                <div class="timeline-subtitle">Junior Associate / Mannheim, Germany</div>
+                <ul class="timeline-bullets">
+                    <li>Facilitated Scrum coaching and guided cross-functional teams through the adoption of agile methodologies</li>
+                    <li>Contributed to the successful implementation of scaled agile frameworks and hybrid project management approaches</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Sep 2023 - Jul 2025</div>
+                <h3 class="timeline-title">Accenture DACH</h3>
+                <div class="timeline-subtitle">Business Analyst (Dual Study) / Mannheim, Germany</div>
+                <ul class="timeline-bullets">
+                    <li>Bridged the gap between technical execution and client needs, delivering cloud-based solutions</li>
+                    <li>Supported Azure-based microservices architectures, including Database Services and Azure AD</li>
+                    <li>Managed CI/CD pipelines in Azure DevOps and implemented infrastructure automation using Terraform</li>
+                    <li>Led client-facing discussions to identify specific business needs and coordinate project requirements</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Jun 2022 - Aug 2023</div>
+                <h3 class="timeline-title">UniCredit Bank Austria AG</h3>
+                <div class="timeline-subtitle">Working Student in Subsidized Real Estate / Vienna, Austria</div>
+                <ul class="timeline-bullets">
+                    <li>Supported comprehensive contract preparation and documentation</li>
+                    <li>Conducted thorough KYC processes to ensure regulatory compliance</li>
+                    <li>Maintained internal database systems for efficient data management</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- NEUE SEKTION FÜR EHRENAMTLICHE ARBEIT -->
+    <section id="volunteer">
+        <h2>Volunteer Experience</h2>
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="timeline-date">Apr 2022 - Jul 2023</div>
+                <h3 class="timeline-title">ÖH WU Wien</h3>
+                <div class="timeline-subtitle">Volunteer Member / Vienna, Austria</div>
+                <ul class="timeline-bullets">
+                    <li>Shaped university life across multiple departments as an active member of the Austrian Students' Union at  Vienna University of Economics and Business (WU)</li>
+                    <li>Focused on student outreach and driving sustainability initiatives within the Environmental Department</li>
+                    <li>Supported the International Department in fostering a global mindset on campus</li>
+                    <li>Contributed creatively to the "Economy Class" podcast team</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Oct 2019 - Jan 2020</div>
+                <h3 class="timeline-title">AIESEC in Austria</h3>
+                <div class="timeline-subtitle">Volunteer Member / Vienna, Austria</div>
+                <ul class="timeline-bullets">
+                    <li>Coordinated the Outgoing Global Volunteer program, facilitating international exchange opportunities for students</li>
+                    <li>Promoted volunteer experiences abroad through targeted outreach and campus marketing initiatives</li>
+                    <li>Organized and managed information booths and promotional events to increase program visibility</li>
+                    <li>Designed and delivered engaging presentations to inspire and inform prospective volunteers</li>
+                    <li>Advised and mentored interested students, guiding them seamlessly through the program selection and application process</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Academic Record</h2>
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <div class="timeline-date">Sep 2025 - Jul 2027</div>
+                <h3 class="timeline-title">University of Applied Sciences Worms</h3>
+                <div class="timeline-subtitle">M.Sc. Business Informatics / Worms, Germany</div>
+                <ul class="timeline-bullets">
+                    <li>Holistic specialization at the intersection of business processes and advanced technical solutions</li>
+                    <li>Core Focus: Data-Driven Applications, Backend Development, Digital Process Management, and IT Leadership</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Oct 2023 - Jul 2025</div>
+                <h3 class="timeline-title">DHBW Mannheim</h3>
+                <div class="timeline-subtitle">Undergraduate Coursework - Data Science and AI / Mannheim, Germany</div>
+                <ul class="timeline-bullets">
+                    <li>Cooperative dual study program in partnership with Accenture DACH</li>
+                    <li>Combined academic coursework in Data Science and AI with hands-on enterprise consulting</li>
+                    <li>Focused on developing data-driven applications using Python, SQL/NoSQL, and machine learning algorithms</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Sep 2021 - Jan 2022</div>
+                <h3 class="timeline-title">University of Copenhagen</h3>
+                <div class="timeline-subtitle">Exchange Semester Political Science / Copenhagen, Denmark</div>
+                <ul class="timeline-bullets">
+                    <li>Explored urban development and European politics</li>
+                    <li>Seminar thesis on livability in Vienna and Copenhagen, focused on shared space concepts</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Oct 2018 - Sep 2022</div>
+                <h3 class="timeline-title">University of Vienna</h3>
+                <div class="timeline-subtitle">B.A. Political Science / Vienna, Austria</div>
+                <ul class="timeline-bullets">
+                    <li>Developed a strong analytical mindset and a deep understanding of complex systemic structures</li>
+                    <li>Bachelor's Thesis: Influence of interest groups on the EU decision-making process</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills & Data</h2>
+        <div class="skills-grid">
+            <div>
+                <div class="skill-category">Languages</div>
+                German (Native) <br> English (C1) <br> French (B1) <br> Russian (A1)
+            </div>
+            <div>
+                <div class="skill-category">Tech Stack</div>
+                Azure / Docker / Terraform <br> 
+                Python / TypeScript / React <br> 
+                Java / R <br>
+                SQL / NoSQL / Databricks <br>
+                SAC / Power BI <br>
+                Mendix / Kubernetes / CI/CD
+            </div>
+            <div>
+                <div class="skill-category">Interests</div>
+                Tennis <br> Dance <br> Reading <br> Piano
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p>[ Mail ] kristin.bruennel@gmail.com</p>
+            <p>[ LinkedIn ] <a href="https://www.linkedin.com/in/kristinbruennel" target="_blank">linkedin.com/in/kristinbruennel</a></p>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    const name = "Kristin Brünnel";
+    const textElement = document.getElementById("typewriter-text");
+    let index = 0;
+
+    function typeWriter() {
+        if (index < name.length) {
+            textElement.innerHTML += name.charAt(index);
+            index++;
+            setTimeout(typeWriter, 150); 
+        }
+    }
+
+    window.onload = function() {
+        setTimeout(typeWriter, 500);
+    };
+
+    const leftText = document.getElementById('parallax-left');
+    const rightText = document.getElementById('parallax-right');
+
+    window.addEventListener('scroll', () => {
+        let scrollPos = window.scrollY;
+        leftText.style.transform = `rotate(180deg) translateY(${scrollPos * 0.15}px)`;
+        rightText.style.transform = `translateY(${scrollPos * -0.15}px)`;
+    });
+</script>
+
+</body>
+</html>
